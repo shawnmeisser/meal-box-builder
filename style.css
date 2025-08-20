@@ -1,0 +1,1107 @@
+/* === Layout Wrapper === */
+.meal-builder-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* === Step One Box Selection === */
+.meal-box-step {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.step1-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.meal-box-options {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#meal-box-message {
+  padding-top: 20px;
+  font-size: 16px;
+  color: #000000;
+}
+
+
+
+
+.box-card p {
+    margin: 4px 0;
+}
+
+.box-option:nth-child(2) 
+
+
+/* === Fix for Long Category Text (like "Pre Diabetes/Diabetes") === */
+.meal-category-filter {
+  word-break: break-word;
+  white-space: normal;
+  max-width: 100%;
+  text-align: left;
+}
+
+/* --- Top Heading to Box Spacing --- */
+#meal-box-step1 h2 {
+  margin-bottom: 30px;
+  /* reduce spacing a bit */
+    font-size: 2rem;
+  /* slightly larger for visibility */;
+}
+
+/* --- Box Cards Proportional Padding --- */
+
+
+@media screen and (max-width: 480px) {
+  
+
+}
+
+
+/* --- Disclaimer better placement --- */
+.meal-box-disclaimer {
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+  max-width: 600px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Global Disclaimer Styling (shown once) === */
+.meal-box-disclaimer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #000000;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  border-top: 1px solid #eee;
+}
+
+
+
+.box-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.box-card p {
+  color: #666;
+}
+
+.box-option.selected .box-card,
+.box-card:hover {
+  border-color: #0f4c5c;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.meal-sidebar {
+  flex: 0 0 250px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  position: sticky;
+  top: 100px;
+}
+
+.meal-content {
+  flex: 1;
+}
+
+/* === Meal Grid (Responsive Columns) === */
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 🖥️ Default: 3 columns */
+  gap: 30px;
+  margin-top: 40px;
+  width: 100%;
+  align-items: start;
+}
+
+/* 📱 Mobile: 1 column */
+@media screen and (max-width: 767px) {
+  .meal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .meal-builder-wrapper {
+    flex-direction: column;
+  }
+}
+
+/* 📱 iPad Mini Landscape: 2 columns */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .meal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.meal-sidebar {
+  width: 100%;
+  position: static;
+}
+
+.meal-card.modern {
+  max-width: 100%;
+}
+
+.meal-image {
+  width: 100%;
+  max-height: 180px;
+}
+
+.meal-image img {
+  height: auto;
+  width: 100%;
+}
+
+.meal-info {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+
+/* === Clear Filters Button === */
+.clear-filters-btn {
+  display: inline-block;
+  margin-bottom: 15px;
+  background: #0f4c5c;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.clear-filters-btn:hover {
+  background: #093845;
+}
+
+/* === Vertical Category List === */
+.vertical-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.meal-category-filter {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+.category-thumb-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  background: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.category-thumb-wrap:hover {
+  background-color: #f1f1f1;
+}
+
+.category-thumb-wrap img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.category-thumb-wrap span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.meal-category-filter.selected .category-thumb-wrap {
+  background-color: #0f4c5c;
+  color: #fff;
+  border-color: #0f4c5c;
+}
+
+.meal-category-filter.selected .category-thumb-wrap span {
+  color: #fff;
+}
+
+/* === Default Message === */
+#meal-default-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  text-align: center;
+  color: #555;
+}
+
+#meal-default-message h2 {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.4;
+  max-width: 600px;
+}
+
+/* === Floating Meal Counter === */
+#meal-floating-counter {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0f4c5c;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 99999 !important;
+  text-align: center;
+}
+
+#meal-floating-counter p {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#meal-floating-counter button {
+  background-color: #fff;
+  color: #0f4c5c;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  margin: 0 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#meal-floating-counter button:hover {
+  background-color: #e6f9fd;
+}
+
+#meal-floating-counter button:disabled {
+  background-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* === Quantity Selector === */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.quantity-selector button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.quantity-selector button:hover {
+  background: #e0e0e0;
+}
+
+.quantity-selector input[type="number"] {
+  width: 60px;
+  padding: 6px 10px;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.quantity-selector input[type="number"]::-webkit-inner-spin-button,
+.quantity-selector input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* === Meal Card === */
+.meal-card.modern {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.meal-card.modern:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.meal-image-full img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.meal-nutrition-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.meal-nutrition-row div {
+  flex: 1;
+}
+
+.meal-nutrition-row small {
+  display: block;
+  font-size: 11px;
+  color: #999;
+}
+
+.meal-main-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.meal-title-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  /* Change from center to baseline for better alignment */;
+}
+
+.meal-title-price h4 {
+  font-size: 22px;
+  margin: 0;
+  color: #333;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  /* Tightens the spacing between characters */;
+}
+
+.meal-title-price .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0f4c5c;
+}
+
+.meal-short-desc {
+  font-size: 16px;
+  color: #666;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+/* === Meal Categories Inline w/ Shadow === */
+.meal-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+  min-height: 28px;
+}
+
+.meal-cat-tag {
+  background: #fff;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  color: #333;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+  transition: background 0.2s ease;
+}
+
+/* === Nutrition Label === */
+.nutrition-label {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  background: #fff;
+  padding: 15px;
+  border: 2px solid #000;
+  margin-top: 15px;
+}
+
+.nutrition-label .bold-row {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-top: 4px solid #000;
+}
+
+.nutrition-label .bold-row:first-of-type {
+  border-top: none;
+}
+
+.nutrition-label .serving-info {
+  margin-bottom: 10px;
+}
+
+.nutrition-label .daily-value-label {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: right;
+  margin: 8px 0;
+  display: block;
+}
+
+.nutrition-label table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.nutrition-label td {
+  font-size: 14px;
+  padding: 6px 0;
+  vertical-align: middle;
+}
+
+.nutrition-label td:nth-child(2) {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.nutrition-label td.indent {
+  padding-left: 20px;
+}
+
+.nutrition-label td.more-indent {
+  padding-left: 35px;
+}
+
+.nutrition-label p strong {
+  font-size: 14px;
+}
+
+.nutrition-panel {
+  display: none;
+}
+
+.nutrition-label strong {
+  font-size: 20px;
+}
+
+.nutrition-label .calories-row {
+  font-size: 18px;
+}
+
+.nutrition-label table td {
+  font-size: 12px;
+  padding: 2px 0;
+}
+
+.nutrition-label .nutrition-disclaimer {
+  font-size: 10px;
+}
+
+.nutrition-label p {
+  font-size: 12px;
+}
+
+
+
+.meal-main-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.meal-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-selector {
+  justify-content: center;
+}
+
+.nutrition-toggle {
+  margin-top: 0;
+}
+
+/* === Meal Actions Wrapper (Bottom of Card) === */
+.meal-actions-wrapper {
+  margin-top: auto;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Optional override for button consistency */
+.meal-actions-wrapper .nutrition-toggle {
+  margin: 0;
+  background: #0f4c5c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.meal-actions-wrapper .nutrition-toggle:hover {
+  background: #093845;
+}
+
+.selected-meal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #0f4c5c;
+}
+
+.selected-meal-item button.remove-meal {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #0f4c5c;
+  font-size: 12px;
+  width: 24px;
+  height: 24px;
+  line-height: 1;
+  padding: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected-meal-item span {
+  flex: 1;
+  padding-right: 8px;
+  font-weight: 500;
+}
+
+/* Toggle Button Styling */
+#meal-counter-toggle {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0f4c5c;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 50px;
+  z-index: 99999;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ... all your existing styles remain unchanged ... */
+
+#meal-counter-toggle {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0f4c5c;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 50px;
+  z-index: 99999;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Expanded Panel */
+#meal-floating-counter {
+  display: block;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0f4c5c;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 99999 !important;
+  text-align: center;
+}
+
+/* NEW: Collapsed state support */
+#meal-floating-counter.collapsed {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  #meal-counter-toggle {
+        display: block;
+}
+
+}
+
+/* === Step 3: Review & Subscription Layout === */
+.meal-summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.summary-total {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0f4c5c;
+  margin-top: 10px;
+}
+
+.subscription-option {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.subscription-option h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #0f4c5c;
+}
+
+.subscription-option label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+}
+
+.subscription-option input[type="radio"] {
+  margin-right: 10px;
+}
+
+.step3-actions .button:hover {
+  background-color: #ddd;
+}
+
+.step3-actions .button.alt {
+  background-color: #0f4c5c;
+  color: #fff;
+}
+
+.step3-actions .button.alt:hover {
+  background-color: #093845;
+}
+
+@media screen and (max-width: 768px) {
+  .step3-actions {
+        flex-direction: column;
+  align-items: stretch;
+}
+
+}
+
+/* === Step 3: Centered Layout === */
+.meal-step3-centered {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.meal-step3-centered h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* === Subscription Toggle === */
+.subscription-toggle {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.subscription-toggle h3 {
+  margin-bottom: 20px;
+  color: #0f4c5c;
+  font-size: 20px;
+}
+
+.toggle-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.toggle-option {
+  flex: 1;
+  text-align: center;
+  border: 2px solid #ccc;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #f7f7f7;
+  font-weight: 500;
+  position: relative;
+  color: #333;
+}
+
+.toggle-option input[type="radio"] {
+  display: none;
+}
+
+.toggle-option input[type="radio"]:checked + span {
+  background: #0f4c5c;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  display: inline-block;
+  width: 100%;
+  padding: 8px 0;
+  transition: all 0.2s ease;
+}
+
+.toggle-option span {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* === Subscription Frequency === */
+#subscription-frequency {
+  padding-left: 10px;
+  border-left: 3px solid #0f4c5c;
+  margin-top: 10px;
+  padding-top: 10px;
+  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* 🔹 Reduces space between options */;
+}
+
+#subscription-frequency label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #333;
+  margin: 0;
+  /* 🔹 Remove default bottom margin */;
+}
+
+/* === Responsive === */
+@media screen and (max-width: 600px) {
+  .toggle-group {
+        flex-direction: column;
+  gap: 10px;
+}
+
+.step3-actions {
+  flex-direction: column;
+}
+
+.step3-actions .button {
+  width: 100%;
+}
+
+}
+
+.box-summary h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  padding-left: 5px;
+}
+
+.meal-summary-list {
+  margin: 0 0 15px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.meal-summary-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.box-summary {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 16px;
+  border-top: 1px solid #eee;
+}
+
+.discount-line {
+  color: #b51c1c;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.meal-box-disclaimer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #000000;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+#meal-floating-counter:hover {
+  opacity: 1;
+}
+
+#meal-floating-counter {
+  position: fixed !important;
+  bottom: 30px;
+  left: 30px;
+  right: auto;
+  background: #0f4c5c;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 2147483647 !important;
+  /* max z-index and override */
+    text-align: center;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+  isolation: isolate;
+  /* 💡 ensures it becomes a new stacking context */;
+}
+
+#et-footer, .et-l--footer, footer {
+  overflow: visible !important;
+  /* ✅ allow floating elements above */
+    z-index: 0 !important;
+  /* drop it below counter if necessary */;
+}
+
+.total-coupon-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Align total and coupon input on same row */
+.total-coupon-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.total-coupon-row .summary-total {
+  margin: 0;
+}
+
+.total-coupon-row #custom-coupon-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+#custom-coupon-wrap input {
+  padding: 6px 12px;
+  height: 38px;
+}
+
+#custom-coupon-wrap button {
+  padding: 6px 14px;
+  height: 38px;
+}
+
+/* === Step 1 Box Card Refinements === */
+.box-card p:first-of-type {
+  margin-bottom: 6px;
+}
+
+.box-card .shipping-info {
+  color: #666;
+  font-size: 13px;
+}
+.meal-category-filter .category-thumb-wrap {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.meal-category-filter .category-thumb-wrap img {
+  margin: 0 auto 6px;
+  display: block;
+}
+
+.meal-category-filter .category-thumb-wrap span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+.clear-filters-btn {
+  background-color: #0f4c5c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.clear-filters-btn:hover {
+  background-color: #0c3c4a;
+}
+
+/* === Replaced .box-card Styles === */
+.box-option {
+  flex: 1;
+  min-width: 240px;
+  text-align: center;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.box-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  padding: 30px 20px !important;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.box-option:hover .box-card,
+.box-option.selected .box-card {
+  transform: translateY(-4px);
+  border: 2px solid #0f4c5c;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.box-card h3 {
+  font-size: 1.5rem; /* Increase headline size */
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.box-card p {
+  font-size: 1.1rem; /* Bump up paragraph text */
+  line-height: 1.5;
+  color: #333;
+}
+/* === STEP 3 FIXES — APRIL 23 === */
+
+/* Fix #1: "Back to Step 2" button color on mobile and tablet */
+#go-back-step2 {
+  color: #000 !important;
+}
+
+/* Fix #2: Ensure total lines stay right-aligned */
+.total-coupon-row {
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.summary-total,
+#custom-coupon-wrap {
+  flex-shrink: 0;
+}
+
+/* Add width limit for coupon + total section to prevent shifting */
+@media screen and (min-width: 768px) {
+  .total-coupon-row {
+    max-width: 600px;
+    margin-left: auto;
+  }
+}
+
